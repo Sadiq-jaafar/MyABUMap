@@ -3,6 +3,7 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import TabNavigation from "./APP/Navigations/TabNavigation";
 import { useEffect, useState } from "react";
+
 import * as Location from "expo-location";
 import { userLocationContext } from "./APP/Components/Context/userLocationContext";
 
@@ -46,3 +47,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
   },
 });
+function useFonts(arg0: { "Inter-Black": any }): [any, any] {
+  throw new Error("Function not implemented.");
+}

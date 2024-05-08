@@ -18,22 +18,22 @@ export default function TabNavigation() {
       }}
     >
       <Tab.Screen
-        name="Fav"
-        component={Fav}
-        options={{
-          tabBarLabel: "Fav",
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="heart" color={colors.blue} size={24} />
-          ),
-        }}
-      />
-      <Tab.Screen
         name="Home"
         component={Home}
         options={{
           tabBarLabel: "Home",
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="home" color={colors.blue} size={24} />
+            <Ionicons name="home-outline" size={24} color="green" />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Fav"
+        component={Fav}
+        options={{
+          tabBarLabel: "Fav",
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="heart-sharp" size={24} color="red" />
           ),
         }}
       />
@@ -43,7 +43,7 @@ export default function TabNavigation() {
         options={{
           tabBarLabel: "Profile",
           tabBarIcon: ({ color, size }) => (
-            <FontAwesome6 name="user" size={24} color="colors.blue" />
+            <FontAwesome6 name="user" size={24} color="green" />
           ),
         }}
       />
@@ -53,7 +53,7 @@ export default function TabNavigation() {
         options={{
           tabBarLabel: "Search",
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="search" color={colors.blue} size={24} />
+            <Ionicons name="search" size={24} color="green" />
           ),
         }}
       />
