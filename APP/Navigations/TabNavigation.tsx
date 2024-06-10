@@ -3,11 +3,11 @@ import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Home from "../Screens/Home";
 import Fav from "../Screens/Fav";
-import Profile from "../Screens/Profile";
 import Search from "../Screens/Search";
 import { Ionicons } from "@expo/vector-icons";
-import { FontAwesome6 } from "@expo/vector-icons";
 import colors from "../Config/Colors";
+import HomeNavigation from "./HomeNavigation";
+import { FontAwesome5 } from "@expo/vector-icons";
 
 export default function TabNavigation() {
   const Tab = createBottomTabNavigator();
@@ -19,7 +19,7 @@ export default function TabNavigation() {
     >
       <Tab.Screen
         name="Home"
-        component={Home}
+        component={HomeNavigation}
         options={{
           tabBarLabel: "Home",
           tabBarIcon: ({ color, size }) => (
@@ -33,20 +33,11 @@ export default function TabNavigation() {
         options={{
           tabBarLabel: "Fav",
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="heart-sharp" size={24} color="red" />
+            <FontAwesome5 name="map-marked-alt" size={24} color="green" />
           ),
         }}
       />
-      <Tab.Screen
-        name="Profile"
-        component={Profile}
-        options={{
-          tabBarLabel: "Profile",
-          tabBarIcon: ({ color, size }) => (
-            <FontAwesome6 name="user" size={24} color="green" />
-          ),
-        }}
-      />
+
       <Tab.Screen
         name="Search"
         component={Search}

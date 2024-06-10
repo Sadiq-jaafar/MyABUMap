@@ -3,7 +3,7 @@ import { View, Dimensions, StyleSheet } from "react-native";
 import MapView, { Marker, PROVIDER_GOOGLE, Region } from "react-native-maps";
 import * as Location from "expo-location";
 import { userLocationContext } from "../Context/userLocationContext";
-import PlaceMarker from "./PlaceMarker";
+import PlaceMarker from "../Home/PlaceMarker";
 
 type Place = {
   name: string;
@@ -17,7 +17,7 @@ type GoogleMapViewProps = {
   placeList: Place[];
 };
 
-export default function GoogleMapView({ placeList }: GoogleMapViewProps) {
+export default function GoogleMapViewFull({ placeList }: GoogleMapViewProps) {
   const { location } = useContext(userLocationContext);
   const [mapRegion, setMapRegion] = useState<Region | null>(null);
 
@@ -37,8 +37,8 @@ export default function GoogleMapView({ placeList }: GoogleMapViewProps) {
       {mapRegion && (
         <MapView
           style={{
-            width: Dimensions.get("screen").width * 0.89,
-            height: Dimensions.get("screen").height * 0.25,
+            width: Dimensions.get("screen").width,
+            height: Dimensions.get("screen").height * 0.89,
           }}
           provider={PROVIDER_GOOGLE}
           showsUserLocation={true}

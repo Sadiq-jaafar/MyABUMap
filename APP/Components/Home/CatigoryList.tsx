@@ -8,31 +8,31 @@ import {
 import React from "react";
 import CatigoryItem from "./CatigoryItem";
 
-export default function CatigoryList() {
+export default function CatigoryList({ setSelectedCatigory }) {
   const catigoryList = [
     {
       id: 1,
       value: "resturants",
       name: "Resturants",
-      icon: require("./../../../assets/11696_new_profilepic.jpg"),
+      icon: require("./../../../assets/placeholder.jpg"),
     },
     {
       id: 2,
       value: "mosque",
-      name: "Mrosque",
-      icon: require("./../../../assets/11696_new_profilepic.jpg"),
+      name: "Mosque",
+      icon: require("./../../../assets/placeholder.jpg"),
     },
     {
       id: 3,
       value: "church",
       name: "Church",
-      icon: require("./../../../assets/11696_new_profilepic.jpg"),
+      icon: require("./../../../assets/placeholder.jpg"),
     },
     {
-      id: 5,
+      id: 4,
       value: "hotel",
       name: "Hotel",
-      icon: require("./../../../assets/11696_new_profilepic.jpg"),
+      icon: require("./../../../assets/placeholder.jpg"),
     },
   ];
   return (
@@ -42,7 +42,7 @@ export default function CatigoryList() {
         horizontal={true}
         data={catigoryList}
         renderItem={({ item }) => (
-          <TouchableOpacity onPress={() => console.log(item.name)}>
+          <TouchableOpacity onPress={() => setSelectedCatigory(item.value)}>
             <CatigoryItem catigory={item} />
           </TouchableOpacity>
         )}

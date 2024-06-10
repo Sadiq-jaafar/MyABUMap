@@ -7,14 +7,14 @@ export default function Header() {
     <View style={styles.container}>
       <Image
         style={styles.logo}
-        source={require("./../../../assets/11696_new_profilepic.jpg")}
+        source={require("./../../../assets/placeholder.jpg")}
       />
       <View style={styles.searchBar}>
         <TextInput placeholder="Search" />
       </View>
       <Image
         style={styles.userImage}
-        source={require("./../../../assets/11696_new_profilepic.jpg")}
+        source={require("./../../../assets/placeholder.jpg")}
       />
     </View>
   );
