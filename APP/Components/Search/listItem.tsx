@@ -1,6 +1,6 @@
 import { View, Text, Image, StyleSheet } from "react-native";
 import React from "react";
-import colors from "../../../Config/Colors";
+import colors from "../../Config/Colors";
 
 export default function listItem({ catigory }) {
   return (

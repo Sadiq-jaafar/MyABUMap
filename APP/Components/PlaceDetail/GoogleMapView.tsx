@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
-import { View, Dimensions, StyleSheet } from "react-native";
+import { View, StyleSheet } from "react-native";
 import MapView, { Marker, PROVIDER_GOOGLE, Region } from "react-native-maps";
-import * as Location from "expo-location";
 import { userLocationContext } from "../Context/userLocationContext";
 import PlaceMarker from "../Home/PlaceMarker";
 
@@ -17,7 +16,7 @@ type GoogleMapViewProps = {
   placeList: Place[];
 };
 
-export default function GoogleMapViewFull({ placeList }: GoogleMapViewProps) {
+const GoogleMapView: React.FC<GoogleMapViewProps> = ({ placeList }) => {
   const { location } = useContext(userLocationContext);
   const [mapRegion, setMapRegion] = useState<Region | null>(null);
 
@@ -36,10 +35,7 @@ export default function GoogleMapViewFull({ placeList }: GoogleMapViewProps) {
     <View style={styles.mapContainer}>
       {mapRegion && (
         <MapView
-          style={{
-            width: Dimensions.get("screen").width,
-            height: Dimensions.get("screen").height * 0.89,
-          }}
+          style={styles.map}
           provider={PROVIDER_GOOGLE}
           showsUserLocation={true}
           region={mapRegion}
@@ -52,12 +48,15 @@ export default function GoogleMapViewFull({ placeList }: GoogleMapViewProps) {
       )}
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   mapContainer: {
-    height: "100%",
-    borderRadius: 20,
-    overflow: "hidden",
+    ...StyleSheet.absoluteFillObject,
+  },
+  map: {
+    ...StyleSheet.absoluteFillObject,
   },
 });
+
+export default GoogleMapView;

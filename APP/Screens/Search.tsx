@@ -11,13 +11,13 @@ import SearchBar from "../Components/Search/SearchBar";
 import GoogleMapView from "../Components/Home/GoogleMapView";
 import PlaceList from "../Components/Home/plist";
 import PlaceItem from "../Components/Home/PlaceItem";
-import List from "../Components/Home/Search/lists";
-import Lists from "../Components/Home/Search/lists";
+import List from "../Components/Search/lists";
+import Lists from "../Components/Search/lists";
 
 export default function Search() {
   const [placeList, setPlaceList] = useState([]);
   return (
-    <View>
+    <View style={styles.all}>
       <View style={styles.SearchContainer}>
         <SearchBar />
       </View>
@@ -29,8 +29,11 @@ export default function Search() {
   );
 }
 const styles = StyleSheet.create({
+  all: {
+    marginTop: 30,
+  },
   SearchContainer: {
-    margin: 20,
+    margin: 10,
     position: "absolute",
     zIndex: 20,
   },
